@@ -1,0 +1,105 @@
+-optical photons are generated...
+[x] find out how optical photons are generated
+   -I think it uses a decay process
+
+-use a positron as a particle
+
+-seems that Cerenkov Process doenst effect simulation much
+       -more optical photons without it than with it
+
+[x] find a way to change output statements at and during a run
+   -Check verbosity levels in all files
+
+-photons are absorbed when it doesnt hit a surface
+
+-when using ion just do /gun/particle ion
+      -[] find a way to specify what type of ion to use
+
+-added vacuum and properties to setup
+       -made world vacuum
+
+-added BC408 and BC418 material
+
+-BC408/418 iformation to put in:
+[x] refraction index
+   -[x] BC408 = 1.58
+   -[x]BC418 = 1.58
+
+[x] energy range
+   -[x] BC408 = 100keV to 5 MeV
+   -[x] BC418 = 100keV to 10 MeV
+
+[x] absorption length
+   -[x] BC408 = 210*cm
+   -[x] BC418 = 100*cm
+
+[x] timing constants
+   -[x] BC408: slow = 14.2*ns
+   	   fast = 2.1*ns
+   -[x] BC418: slow = 1.4*ns
+   	   fast = 0.5*ns
+
+-Add PMT onto back of light guide
+     -[x] make eventinformation file
+     -[x] find out how to place pmt at a specific spot
+     	 -PMT placement is found in LXeMainVolume.cc in src
+     -[x] make pmt SD file
+    
+     -[x] make cathode 
+     	 -out of Bi alkali
+	      -Rb2CsSb
+	 -[x] check to make sure put in the right place
+
+-[x] Google the difference between optical surfaces
+    -ask Brian how to fix this
+    	 -[x]add REINDX to light guide
+	 	 --WORKS NOW
+
+-[x] try and figure out what poala is doing with the scintillator surfaces
+
+-[x] try combining light guide and thick scintillator into one physical volume and wrap that
+     -didnt work
+
+-[x] wrap scintillator properally so that photon goes through and hits pmt 
+    -[/] test PMT using cout statments
+    	 -Dont work. Need to make the photocathode a sensitive detector
+	 -Make PhotoCath a perfect detector (see Brian's code)
+
+-[x] I dont think the photons are reacting with the light guide
+    -it doesnt --> changed the material to BC408 and it does react now
+
+-[/] see if you cant add a surface inbetween light guide and thick scintillator that doesnt have any reflective properties and see if that will work
+     --not working so far. Need to find the right properties of the wrap
+
+-[//] poala uses a whole object to act as a wrap instead of actually wrapping...try this first
+    -make out of teflon since she has it set up already
+-wont work
+
+-[//] try making the scintillator out of six pieces (or three...top/bottom, left, and right)
+    -after making the six pieces of mylar be sure to make the inside box the scintillator
+-->Doesnt work
+
+-[] find a way to fill a histogram where for every photon you get this much energy
+
+-[--] find a way to call a function from one class to another so I can get total photon counts from StackingAction to PMTSD 
+
+-[//] use poala/brian's PMTSD to see if it works and then modify to fit what I need
+    -[//] use their eventaction too
+
+-[x] if cant make pmt work, just count photons directly and count the photons as a function of time
+    -Pulse Shape Analysis
+
+-[x] have data (number of photons, energy, time) read into a vector for each event
+
+-[] have little scint do the same as big scint
+    --Get the hitscollection example from sidssdDetectorConstruction
+
+-[//] work on finding a way to compile root with geant
+
+-[x] write data to a text file
+
+
+
+
+
+

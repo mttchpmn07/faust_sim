@@ -1,0 +1,2 @@
+/home/mttchpmn07/geant4/geant4.9.6.p01/examples/novice/geant_sim/CMakeFiles/N06.dir
+/home/mttchpmn07/geant4/geant4.9.6.p01/examples/novice/geant_sim/CMakeFiles/exampleN06.dir
